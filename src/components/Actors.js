@@ -2,7 +2,7 @@ import React from "react";
 import { actors } from "../data";
 
 function Actors() {
-  const actorList = actors.map((actor) => (
+  const actorsDetails = actors.map((actor) => (
     <div key={actor.name}>
       <h2>{actor.name}</h2>
       <ul>
@@ -14,10 +14,12 @@ function Actors() {
   ));
 
   return (
-    <div>
-      <h1>Actors Page</h1>
-      {actorList}
-    </div>
+    <>
+      <div>
+        <h1>Actors Page</h1>
+        {actorsDetails}
+      </div>
+    </>
   );
 }
 

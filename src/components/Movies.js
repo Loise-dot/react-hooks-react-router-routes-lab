@@ -2,20 +2,24 @@ import React from "react";
 import { movies } from "../data";
 
 function Movies() {
-  const list = movies.map((movie) => {
+  const movieDetails = movies.map((movie) => (
     <div key={movie.title}>
       <h2>{movie.title}</h2>
-      <p> {movie.time}</p>
+      <p>Runtime: {movie.time} min.</p>
       <ul>
-        <li>{movie.genre}</li>
+        {movie.genres.map((genre) => (
+          <li key={genre}>{genre}</li>
+        ))}
       </ul>
-    </div>;
-  });
-  return (
-    <div>
-      <h1>Movies Page</h1>
-      {list}
     </div>
+  ));
+  return (
+    <React.Fragment>
+      <div>
+        <h1>Movies Page</h1>
+        {movieDetails}
+      </div>
+    </React.Fragment>
   );
 }
 
